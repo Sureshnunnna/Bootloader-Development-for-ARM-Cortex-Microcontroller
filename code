@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdint.h>
+#include <string.h>
+
+// Mock function prototypes
+void uart_send_string(const char *str);
+void jump_to_application(void);
+void system_clock_config(void);
+void simulate_firmware_update(void);
+
+// Simulated main function
+int main(void) {
+    system_clock_config(); // Simulate system clock configuration
+    uart_send_string("Bootloader Starting...\n");
+
+    // Simulate checking for firmware update condition (e.g., button press)
+    // Here we will simulate a condition using a variable instead of GPIO
+   int firmware_update_condition = 1; // Change this to 1; // Change this to 1 to simulate update mode
+
+    if (firmware_update_condition) {
+        uart_send_string("Entering firmware update mode...\n");
+        simulate_firmware_update(); // Simulate firmware update process
+    } else {
+        uart_send_string("Jumping to application...\n");
+        jump_to_application(); // Simulate jumping to the application
+    }
+
+    while (1); // Infinite loop (should not reach here)
+}
+
+// Mock function to simulate jumping to application
+void jump_to_application(void) {
+    uart_send_string("Application started!\n");
+}
+
+// Mock function to simulate system clock configuration
+void system_clock_config(void) {
+    uart_send_string("System clock configured.\n");
+}
+
+// Mock function to simulate UART sending string
+void uart_send_string(const char *str) {
+    printf("%s", str); // Print the string to console as simulation of UART transmission
+}
+
+// Mock function to simulate firmware update process
+void simulate_firmware_update(void) {
+    uart_send_string("Firmware update process initiated...\n");
+}
