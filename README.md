@@ -75,8 +75,13 @@ void simulate_firmware_update(void) {
 }
 
 after changeing 0 to 1 
+
+
 ![image](https://github.com/user-attachments/assets/09fc088b-57e4-46c4-86e2-958e8c22f706)
 
+
 before chaneing 0 to 1
+
+
 
 ![image](https://github.com/user-attachments/assets/fcb46906-ec50-4b64-b0f4-f6f761e59465)
